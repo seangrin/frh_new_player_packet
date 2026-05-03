@@ -638,6 +638,84 @@ article li {
   text-decoration: none;
 }
 
+.npp-letter-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.05in 0.92in 1in;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.18), transparent 14%),
+    #f5ecd9;
+  color: #252019;
+  border: 1px solid #d1b995;
+  box-shadow: 0 16px 34px rgba(62, 42, 16, 0.16);
+}
+
+.npp-letter-body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(90, 70, 35, 0.045) 0,
+      rgba(90, 70, 35, 0.045) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  opacity: 0.34;
+}
+
+.npp-letter-body > * {
+  position: relative;
+  z-index: 1;
+}
+
+.npp-letter-body p,
+.npp-letter-body li,
+.npp-letter-body span,
+.npp-letter-body strong {
+  font-family: "Courier New", "Courier", "Nimbus Mono PS", "Liberation Mono", monospace;
+  font-size: 1rem;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.npp-letter-body p {
+  line-height: 1.28;
+  margin-bottom: 0.8rem;
+  max-width: none;
+}
+
+.npp-letter-body .letterhead,
+.npp-letter-body .signature {
+  line-height: 1.35;
+}
+
+.npp-letter-body .letter-date {
+  margin-top: 1.4rem;
+  margin-bottom: 0;
+}
+
+.npp-letter-body .salutation {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.npp-letter-body .signoff {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.npp-letter-body .signature {
+  margin-top: 0;
+}
+
+.npp-letter-body .letter-thumbs figcaption {
+  font-family: "Courier New", "Courier", "Nimbus Mono PS", "Liberation Mono", monospace;
+}
+
 @media (max-width: 700px) {
   body {
     font-size: 17px;
@@ -730,6 +808,10 @@ article li {
   .gm-intro,
   .letterhead-with-thumbs {
     grid-template-columns: 1fr;
+  }
+
+  .npp-letter-body {
+    padding: 1rem 0.9rem 1.05rem;
   }
 
   .gm-portrait {
