@@ -546,6 +546,51 @@ sup {
   line-height: 0;
 }
 
+
+article {
+  position: relative;
+  z-index: 1;
+}
+
+article p,
+article li {
+  max-width: 46rem;
+}
+
+.npp-scene-nav {
+  margin: 1rem 0 1.15rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--nav);
+}
+
+.npp-scene-nav h2 {
+  margin-bottom: 0.8rem;
+}
+
+.npp-scene-nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.npp-scene-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(108, 39, 23, 0.25);
+  background: #fdf7ed;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.npp-scene-nav a:hover,
+.npp-scene-nav a:focus {
+  background: #fff2df;
+  text-decoration: none;
+}
+
 @media (max-width: 700px) {
   body {
     font-size: 17px;
@@ -631,6 +676,21 @@ sup {
 
   .letter-thumbs {
     max-width: 220px;
+  }
+
+
+  .npp-scene-nav {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .npp-scene-nav div {
+    flex-direction: column;
+  }
+
+  .npp-scene-nav a {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-banner {
