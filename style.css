@@ -87,6 +87,18 @@ header {
   margin: 0;
 }
 
+.provenance-footnote {
+  margin-left: 0.22rem;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.provenance-footnote:hover,
+.provenance-footnote:focus {
+  color: var(--accent);
+}
+
 .frh-network-bar {
   margin: 0 0 1rem;
   padding: 0.55rem 0.8rem 0.65rem;
