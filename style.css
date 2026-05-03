@@ -638,6 +638,53 @@ article li {
   text-decoration: none;
 }
 
+.legacy-sheet-wrap {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.legacy-sheet-frame {
+  display: block;
+  width: 100%;
+  min-height: 1800px;
+  border: 1px solid var(--line);
+  background: #fffdfa;
+}
+
+.npp-sheet-body {
+  position: relative;
+}
+
+.npp-sheet-body h2,
+.npp-sheet-body h3 {
+  clear: both;
+}
+
+.npp-sheet-body p {
+  max-width: none;
+}
+
+.npp-sheet-body .character-portrait {
+  float: right;
+  width: 300px;
+  max-width: min(42%, 300px);
+  height: auto;
+  margin: 0 0 1rem 1.2rem;
+  border: 1px solid rgba(93, 67, 34, 0.28);
+  background: #f3ebde;
+}
+
+.npp-table-scroll {
+  overflow-x: auto;
+  margin: 0.4rem 0 1rem;
+}
+
+.npp-table-scroll table {
+  min-width: 400px;
+}
+
 .npp-letter-body {
   max-width: 760px;
   margin: 0 auto;
@@ -814,6 +861,13 @@ article li {
     padding: 1rem 0.9rem 1.05rem;
   }
 
+  .npp-sheet-body .character-portrait {
+    float: none;
+    display: block;
+    max-width: min(100%, 260px);
+    margin: 0 auto 1rem;
+  }
+
   .gm-portrait {
     max-width: 180px;
   }
@@ -835,6 +889,10 @@ article li {
   .npp-scene-nav a {
     width: 100%;
     justify-content: center;
+  }
+
+  .legacy-sheet-frame {
+    min-height: 1400px;
   }
 
   .hero-banner {
