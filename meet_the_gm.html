@@ -47,8 +47,10 @@
 
     <section class="card">
       <h2>Sean's History with D&amp;D</h2>
-      <figure class="feature-figure">
-        <img src="sean_history_with_dnd.jpg" alt="Sean's modified history of D&amp;D graphic">
+      <figure class="appendix-figure">
+        <button class="lightbox-trigger" type="button" data-lightbox-src="sean_history_with_dnd.jpg" data-lightbox-alt="Sean's modified history of D&amp;D graphic" data-lightbox-caption="A personal hobby-history graphic tracing Sean's relationship to D&amp;D and the older campaign tradition around it.">
+          <img src="sean_history_with_dnd.jpg" alt="Sean's modified history of D&amp;D graphic">
+        </button>
         <figcaption>A personal hobby-history graphic tracing Sean's relationship to D&amp;D and the older campaign tradition around it.</figcaption>
       </figure>
     </section>
@@ -78,5 +80,56 @@
       <p>Contact: <a href="mailto:frh.gurps.1920s@gmail.com">frh.gurps.1920s@gmail.com</a></p>
     </div>
   </main>
+  <div class="lightbox" id="dnd-history-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dnd-history-lightbox-caption">
+    <div class="lightbox-frame" tabindex="-1">
+      <div class="lightbox-actions">
+        <button class="lightbox-close" type="button" aria-label="Close zoomed image">Close Zoom</button>
+      </div>
+      <img id="dnd-history-lightbox-image" src="" alt="">
+      <p class="lightbox-caption" id="dnd-history-lightbox-caption"></p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById("dnd-history-lightbox");
+      const lightboxImage = document.getElementById("dnd-history-lightbox-image");
+      const lightboxCaption = document.getElementById("dnd-history-lightbox-caption");
+      const closeButton = lightbox.querySelector(".lightbox-close");
+      const triggers = document.querySelectorAll(".lightbox-trigger");
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        document.body.classList.remove("lightbox-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+        lightboxCaption.textContent = "";
+      }
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", function () {
+          lightboxImage.src = this.dataset.lightboxSrc;
+          lightboxImage.alt = this.dataset.lightboxAlt || "";
+          lightboxCaption.textContent = this.dataset.lightboxCaption || "";
+          lightbox.classList.add("is-open");
+          document.body.classList.add("lightbox-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          closeButton.focus();
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    }());
+  </script>
 </body>
 </html>
